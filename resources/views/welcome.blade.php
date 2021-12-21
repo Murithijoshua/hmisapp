@@ -60,7 +60,7 @@
                                 <!-- Card content -->
                                 <div class="card-body">
                                     <!-- Title -->
-                                    <h4 class="card-title">KenyaEMR</h4>
+                                    <h5 class="card-title">KenyaEMR</h5>
                                     <!-- Text -->
                                     <p class="card-text">Use this for training and demo. </p>
                                     <p class="card-text">To login use Admin/Admin123. </p>
@@ -79,7 +79,7 @@
                                 <!-- Card content -->
                                 <div class="card-body">
                                     <!-- Title -->
-                                    <h4 class="card-title">Key Pop System</h4>
+                                    <h5 class="card-title">Key Pop System</h5>
                                     <!-- Text -->
                                     <p class="card-text">Use this for training and demo</p>
                                     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
@@ -99,7 +99,7 @@
                                 <!-- Card content -->
                                 <div class="card-body">
                                     <!-- Title -->
-                                    <h4 class="card-title">Ushauri</h4>
+                                    <h5 class="card-title">Ushauri</h5>
                                     <!-- Text -->
                                     <p class="card-text">Use this for training and demo</p>
                                     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
@@ -118,7 +118,7 @@
                                 <!-- Card content -->
                                 <div class="card-body">
                                     <!-- Title -->
-                                    <h4 class="card-title">Mhealth</h4>
+                                    <h5 class="card-title">Mhealth</h5>
                                     <!-- Text -->
                                     <p class="card-text">Use this for training and demo</p>
                                     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
@@ -139,7 +139,7 @@
                                 <div class="card-body">
 
                                     <!-- Title -->
-                                    <h4 class="card-title">IQCare</h4>
+                                    <h5 class="card-title">IQCare</h5>
                                     <!-- Text -->
                                     <p class="card-text">Use this for training and demo</p>
                                     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
@@ -158,7 +158,7 @@
                                 <div class="card-body">
 
                                     <!-- Title -->
-                                    <h4 class="card-title">Interoperability Layer</h4>
+                                    <h5 class="card-title">Interoperability Layer</h5>
                                     <!-- Text -->
                                     <p class="card-text">Use this for training and demo</p>
                                     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
