@@ -79,26 +79,6 @@
                                 <!-- Card content -->
                                 <div class="card-body">
                                     <!-- Title -->
-                                    <h5 class="card-title">Key Pop System</h5>
-                                    <!-- Text -->
-                                    <p class="card-text">Use this for training and demo</p>
-                                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                                    <a class="btn btn-outline-success btn-md stretched-link" target="_blank" href="https://data.kenyahmis.org:9000/openmrs"><i class="fa fa-check-circle" aria-hidden="true"></i> Key Pop</a>
-
-                                </div>
-                                <!-- Card content -->
-
-                            </div>
-                            <!-- Card -->
-
-                             <!-- Card -->
-                            <!-- Card -->
-                            <div class="card mb-3">
-
-
-                                <!-- Card content -->
-                                <div class="card-body">
-                                    <!-- Title -->
                                     <h5 class="card-title">Ushauri</h5>
                                     <!-- Text -->
                                     <p class="card-text">Use this for training and demo</p>
@@ -123,27 +103,6 @@
                                     <p class="card-text">Use this for training and demo</p>
                                     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
                                     <a class="btn btn-outline-success btn-md stretched-link" target="_blank" href="http://176.58.109.44:5010"><i class="fa fa-check-circle" aria-hidden="true"></i> Mhealth</a>
-
-                                </div>
-                                <!-- Card content -->
-
-                            </div>
-                            <!-- Card -->
-
-
-                            <!-- Card -->
-                            <div class="card mb-3">
-
-
-                                <!-- Card content -->
-                                <div class="card-body">
-
-                                    <!-- Title -->
-                                    <h5 class="card-title">IQCare</h5>
-                                    <!-- Text -->
-                                    <p class="card-text">Use this for training and demo</p>
-                                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                                    <a class="btn btn-outline-success btn-md stretched-link" target="_blank" href="http://iqcare.kenyahmis.org"><i class="fa fa-check-circle" aria-hidden="true"></i> IQCare</a>
 
                                 </div>
                                 <!-- Card content -->
