@@ -91,6 +91,46 @@
                             </div>
                             <!-- Card -->
 
+                             <!-- Card -->
+                            <!-- Card -->
+                            <div class="card mb-3">
+
+
+                                <!-- Card content -->
+                                <div class="card-body">
+                                    <!-- Title -->
+                                    <h4 class="card-title">Ushauri</h4>
+                                    <!-- Text -->
+                                    <p class="card-text">Use this for training and demo</p>
+                                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                    <a class="btn btn-outline-success btn-md stretched-link" target="_blank" href="http://176.58.109.44:5020/"><i class="fa fa-check-circle" aria-hidden="true"></i> Ushauri</a>
+
+                                </div>
+                                <!-- Card content -->
+
+                            </div>
+                            <!-- Card -->
+
+                            <!-- Card -->
+                            <div class="card mb-3">
+
+
+                                <!-- Card content -->
+                                <div class="card-body">
+                                    <!-- Title -->
+                                    <h4 class="card-title">Mhealth</h4>
+                                    <!-- Text -->
+                                    <p class="card-text">Use this for training and demo</p>
+                                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                    <a class="btn btn-outline-success btn-md stretched-link" target="_blank" href="http://176.58.109.44:5010"><i class="fa fa-check-circle" aria-hidden="true"></i> Mhealth</a>
+
+                                </div>
+                                <!-- Card content -->
+
+                            </div>
+                            <!-- Card -->
+
+
                             <!-- Card -->
                             <div class="card mb-3">
 
@@ -175,7 +215,7 @@
                                     <!-- Title -->
                                     <h4 class="card-title">SPOT</h4>
                                     <!-- Text -->
-                                    <p class="card-text">Use this for view DWAPI uploads to DWH.</p>
+                                    <p class="card-text">Use this to view DWAPI uploads to DWH.</p>
                                     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
                                     <a class="btn btn-outline-info btn-md stretched-link" target="_blank" href="http://data.kenyahmis.org:4700/"><i class="fa fa-check-circle" aria-hidden="true"></i> SPOT</a>
                                 </div>
@@ -201,7 +241,39 @@
 
                             </div>
                             <!-- Card -->
+                             <!-- Card -->
+                            <div class="card mb-4">
 
+
+                                <!-- Card content -->
+                                <div class="card-body">
+
+                                    <!-- Title -->
+                                    <h4 class="card-title">MLAB</h4>
+                                    <!-- Text -->
+                                    <p class="card-text">Use this to view VL results.</p>
+                                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                    <a class="btn btn-outline-info btn-md stretched-link" target="_blank" href="https://mlab.nascop.org/"><i class="fa fa-check-circle" aria-hidden="true"></i> MLAB</a>
+                                </div>
+                                <!-- Card content -->
+
+                            </div>
+
+                            <!-- Card -->
+                            <div class="card mb-4">
+
+
+                                <!-- Card content -->
+                                <div class="card-body">
+
+                                    <!-- Title -->
+                                    <h4 class="card-title">USHAURI</h4>
+                                    <!-- Text -->
+                                    <p class="card-text">Use this to view Appointment Messages.</p>
+                                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                    <a class="btn btn-outline-info btn-md stretched-link" target="_blank" href="https://ushauri.nascop.org/"><i class="fa fa-check-circle" aria-hidden="true"></i> USHAURI</a>
+                                </div>
+                                <!-- Card content -->
 
 
                         </div>
@@ -209,7 +281,9 @@
                     </div>
                     <div class="col-2"></div>
                 </div>
+
                 <hr>
+                
                 <h1 class="text-success text-center">EXTERNAL & INTERNAL TESTING SERVERS</h1>
                 <div class="row">
                     <div class="col-2"></div>
