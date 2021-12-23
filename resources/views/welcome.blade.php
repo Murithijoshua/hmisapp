@@ -78,18 +78,19 @@
                                 <!-- Card content -->
                                 <div class="card-body">
                                     <!-- Title -->
-                                    <h4 class="card-title">New SPOT</h4>
+                                    <h4 class="card-title">SPOT</h4>
                                     <!-- Text -->
-                                    <p class="card-text">Use this for SPOT to view DWAPI uploads for CT and HTS dockets. </p>
+                                    <p class="card-text">Use this for SPOT training and testing. </p>
                                     <p class="card-text">EMR metrics can also be viewed</p>
                                     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                                    <a class="btn btn-success btn-sm stretched-link" target="_blank" href="https://spot.kenyahmis.org/"><i class="fa fa-check-circle" aria-hidden="true"></i> SPOT (Test)</a>
+                                    <a class="btn btn-success btn-sm stretched-link" target="_blank" href="https://spotstaging.kenyahmis.org/"><i class="fa fa-check-circle" aria-hidden="true"></i> SPOT</a>
 
                                 </div>
                                 <!-- Card content -->
 
                             </div>
                             <!-- Card -->
+
 
                             <!-- Card -->
                             <div class="card mb-3">
@@ -101,11 +102,11 @@
                                     <!-- Title -->
                                     <h4 class="card-title">Ushauri</h4>
                                     <!-- Text -->
-                                    <p class="card-text">Use this for IQCare training and demo. To install, get latest.</p>
-                                    <p class="card-text">To login use Admin/c0nste11a </p>
+                                    <p class="card-text">Use this for Ushauri training and demo. To install, get latest.</p>
+                                    <p class="card-text">To login use 0731332028/Trial@2019 </p>
                                     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                                    <a class="btn btn-outline-success btn-sm" target="_blank" href="http://iqcare.kenyahmis.org"><i class="fa fa-check-circle" aria-hidden="true"></i> IQCare</a>
-                                    <a class="btn btn-outline-secondary btn-sm float-right" target="_blank" href="https://github.com/palladiumkenya/kenyahmis-releases/releases/tag/v27">
+                                    <a class="btn btn-outline-success btn-sm" target="_blank" href="http://176.58.109.44:5020/"><i class="fa fa-check-circle" aria-hidden="true"></i> Ushauri</a>
+                                    <a class="btn btn-outline-secondary btn-sm float-right" target="_blank" href="https://github.com/palladiumkenya/ushauriweb">
                                         <svg height="20" class="octicon octicon-mark-github text-white" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
                                         Github</a>
                                 </div>
@@ -113,6 +114,27 @@
 
                             </div>
                             <!-- Card -->
+                            <!-- Card -->
+                            <div class="card mb-3">
+
+
+                                <!-- Card content -->
+                                <div class="card-body">
+
+                                    <!-- Title -->
+                                    <h4 class="card-title">MLAB</h4>
+                                    <!-- Text -->
+                                    <p class="card-text">Use this for MLAB training and demo. To install, get latest.</p>
+                                    <p class="card-text">To login use hdindi@mhealthkenya.org/hdindi1234 </p>
+                                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                    <a class="btn btn-outline-success btn-sm" target="_blank" href="http://176.58.109.44:5010/"><i class="fa fa-check-circle" aria-hidden="true"></i> MLAB</a>
+                                    <a class="btn btn-outline-secondary btn-sm float-right" target="_blank" href="https://github.com/palladiumkenya/mLab">
+                                        <svg height="20" class="octicon octicon-mark-github text-white" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+                                        Github</a>
+                                </div>
+                                <!-- Card content -->
+
+                            </div>
                             <!-- Card -->
                             <div class="card mb-3">
 
@@ -173,9 +195,10 @@
                                                     <h4 class="card-title">KenyaEMR</h4>
                                                     <!-- Text -->
                                                     <p class="card-text">Use this for testing only.</p>
+                                                    <p class="card-text">Openmrs v2.X</p>
                                                     <p class="card-text">To login use Admin/Admin123 </p>
                                                     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                                                    <a class="btn btn-outline-primary btn-sm stretched-link" target="_blank" href="https://data.kenyahmis.org:8400/openmrs"><i class="fa fa-check-circle" aria-hidden="true"></i> KenyaEMR (Test)</a>
+                                                    <a class="btn btn-outline-primary btn-sm stretched-link" target="_blank" href="http://197.248.44.228:8600/openmrs"><i class="fa fa-check-circle" aria-hidden="true"></i> KenyaEMR (Test)</a>
 
                                                 </div>
                                                 <!-- Card content -->
@@ -191,9 +214,10 @@
                                                 <div class="card-body">
 
                                                     <!-- Title -->
-                                                    <h4 class="card-title">KenyaEMR & KP</h4>
+                                                    <h4 class="card-title">KenyaEMR</h4>
                                                     <!-- Text -->
                                                     <p class="card-text">Use this for testing only.</p>
+                                                    <p class="card-text">Openmrs v1.X</p>
                                                     <p class="card-text">To login use Admin/Admin123 </p>
                                                     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
                                                     <a class="btn btn-outline-primary btn-sm stretched-link" target="_blank" href="https://data.kenyahmis.org:9100/openmrs/index.htm    "><i class="fa fa-check-circle" aria-hidden="true"></i> Key Pop (Test)</a>
@@ -286,7 +310,7 @@
                                                     <!-- Text -->
                                                     <p class="card-text">Use this for view DWAPI uploads to DWH.</p>
                                                     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                                                    <a class="btn btn-outline-info btn-md stretched-link" target="_blank" href="http://data.kenyahmis.org:4700/"><i class="fa fa-check-circle" aria-hidden="true"></i> SPOT</a>
+                                                    <a class="btn btn-outline-info btn-md stretched-link" target="_blank" href="https://spot.kenyahmis.org/"><i class="fa fa-check-circle" aria-hidden="true"></i> SPOT</a>
                                                 </div>
                                                 <!-- Card content -->
 
@@ -532,7 +556,7 @@
 
                 <div class="row">
                     <div class="col-12 container justify-content-center">
-                       <p class="text-muted"> Brought to you by Quality Assurance, KeHMIS</p>
+                       <p class="text-muted container justify-content-center">Brought to you by Quality Assurance, KeHMIS</p>
                     </div>
                 </div>
 
