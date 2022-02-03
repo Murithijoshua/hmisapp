@@ -103,7 +103,7 @@
                                     <h4 class="card-title">Ushauri</h4>
                                     <!-- Text -->
                                     <p class="card-text">Use this for Ushauri training and demo. To install, get latest.</p>
-                                    <p class="card-text">To login use 0731332028/Trial@2019 </p>
+                                    <p class="card-text">To login use palladium@kenya/Admin123 </p>
                                     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
                                     <a class="btn btn-outline-success btn-sm" target="_blank" href="http://176.58.109.44:5020/"><i class="fa fa-check-circle" aria-hidden="true"></i> Ushauri</a>
                                     <a class="btn btn-outline-secondary btn-sm float-right" target="_blank" href="https://github.com/palladiumkenya/ushauriweb">
@@ -125,7 +125,7 @@
                                     <h4 class="card-title">MLAB</h4>
                                     <!-- Text -->
                                     <p class="card-text">Use this for MLAB training and demo. To install, get latest.</p>
-                                    <p class="card-text">To login use hdindi@mhealthkenya.org/hdindi1234 </p>
+                                    <p class="card-text">To login use palladium@kenya/Admin123</p>
                                     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
                                     <a class="btn btn-outline-success btn-sm" target="_blank" href="http://176.58.109.44:5010/"><i class="fa fa-check-circle" aria-hidden="true"></i> MLAB</a>
                                     <a class="btn btn-outline-secondary btn-sm float-right" target="_blank" href="https://github.com/palladiumkenya/mLab">
@@ -255,7 +255,7 @@
                                                 <div class="card-body">
 
                                                     <!-- Title -->
-                                                    <h4 class="card-title">New DWH Portal</h4>
+                                                    <h4 class="card-title">DWH Portal</h4>
                                                     <!-- Text -->
                                                     <p class="card-text">Use this for testing only.</p>
                                                     <p class="card-text">Data and changes is regularly added & deleted! </p>
