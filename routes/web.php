@@ -1,5 +1,6 @@
-<?php
 
+<?php
+use App\Http\Controllers\ApiConsummer;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +12,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+Route::get('/', [ApiConsummer::class, 'apiWithKey'])->name('home');
