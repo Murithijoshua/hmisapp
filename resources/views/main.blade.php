@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth md:scroll-auto">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth transition duration-150 ease-in-out">
 
 <head>
     <meta charset="utf-8">
@@ -27,7 +27,7 @@
 
 </head>
 
-<body class="dark:bg-gray-600">
+<body class="dark:bg-gray-800">
     <header>
     {{-- navigation --}}
     @include('componets.nav')
@@ -37,7 +37,7 @@
 
     {{-- main content --}}
 
-    <div class=" dark:bg-gray-600  justify-center">
+    <div class=" dark:bg-gray-800 ">
         @yield('content')
 
     </div>

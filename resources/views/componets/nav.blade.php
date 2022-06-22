@@ -1,5 +1,5 @@
 <nav
-  class="bg-white bordershadow-2xl -green-200 px-2 sm:px-4 py-2.5 rounded-md dark:bg-gray-500 mb-2 font-black drop-shadow-xl dark:text-white ">
+  class="bg-white bordershadow-2xl -green-200 px-2 sm:px-4 py-2.5 rounded-md dark:bg-gray-700 mb-2 font-black drop-shadow-xl dark:text-white ">
   <div class="container flex flex-wrap justify-between items-center mx-auto">
     <a href="https:prod.kenyahmis.org:81818" class="flex items-center">
       {{-- <img class="card-img-top h-25 w-100 align-items-center" src="" alt="KeHMIS"> --}}
@@ -74,20 +74,24 @@
       </div>
       <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-bold">
         <li>
-          <a href="#"
-            class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+          <a href="#training-servers"
+            class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Training servers</a>
         </li>
         <li>
+          @auth
+              
+         
           <a href="#contacts-tab"
-            class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-300 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Active
+            class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-300 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Live
             servers</a>
+            @endauth
         </li>
           @guest
         <li>
           {{-- <a href="{{ route('login') }}"
             class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-300 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">{{
             __('Login') }}</a> --}}
-        </li>
+            </
           
           @else
 <li>

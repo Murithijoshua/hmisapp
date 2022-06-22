@@ -1,5 +1,5 @@
 <div>
-    <h2 class="my-6 dark:text-gray-300 font-extrabold text-2xl underline-offset-4 text-center ">Training Servers</h2>
+    <h2 class="my-6 dark:text-gray-300 font-extrabold text-2xl underline-offset-4 text-center " id="training-servers">Training Servers</h2>
     <div class="w-11/12 flex flex-wrap my-4 space-y-4 md:space-x-4  justify-center ">
         <div></div>
         <!-- kenyaemr 18.x-->
