@@ -12,13 +12,9 @@
                 <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
             </li>
             @guest
-                
-            
-            <li> <button
-                class="px-3 py-2 text-sm font-medium text-center float-right text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                type="button" data-modal-toggle="authentication-modal">
-                Q.A
-
+            <li> <a href="{{ route('login') }}"
+                class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-300 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Q.A {{
+                __('Login') }}</a>
             </button>
         </li>
                 

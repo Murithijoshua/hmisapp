@@ -16,3 +16,6 @@ use App\Http\Controllers\ApiConsummer;
 //     return view('index');
 // });
 Route::get('/', [ApiConsummer::class, 'apiWithKey'])->name('home');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
