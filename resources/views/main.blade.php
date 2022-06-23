@@ -33,9 +33,6 @@
     @include('componets.nav')
     @include('componets.hero')
     </header>
-    {{-- end of navigation --}}
-
-    {{-- main content --}}
 
     <div class=" dark:bg-gray-800 ">
         @yield('content')

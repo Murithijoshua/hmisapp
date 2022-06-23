@@ -1,5 +1,6 @@
 
 <?php
+// use App\Http\Controllers\DwhResourcesController;
 use App\Http\Controllers\ApiConsummer;
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,4 @@ Route::get('/', [ApiConsummer::class, 'apiWithKey'])->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('dwhResources', DwhResourcesController::class);

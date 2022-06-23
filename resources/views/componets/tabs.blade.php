@@ -1,3 +1,8 @@
+@if(session()->get('success'))
+    <div class="alert alert-success">
+      {{ session()->get('success') }}  
+    </div><br />
+  @endif
 <div class="my-6 mb-6 shadow-sm">
     <h2 class="my-6 dark:text-gray-300 font-extrabold text-2xl underline-offset-4 text-center ">These are the technical
         training materials as per the latest HIS products</h2>
@@ -48,88 +53,56 @@
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3">
-                                Product name
+                                Number
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Color
+                                Title
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Category
+                                Description
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Price
+                                URL
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                <span class="sr-only">Edit</span>
+                                Other Options
                             </th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($dwhData as $data)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                Apple MacBook Pro 17"
-                            </th>
+                            
                             <td class="px-6 py-4">
-                                Sliver
+                                {{$data->id}}
                             </td>
                             <td class="px-6 py-4">
-                                Laptop
+                                {{$data->Title}}
                             </td>
                             <td class="px-6 py-4">
-                                $2999
+                                {{$data->Description}}
                             </td>
                             <td class="px-6 py-4 text-right">
-                                <a href="#"
+                                <a href="{{ route('dwhResources.edit', $data->id)}}"
                                     class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                   
+                                <form action="{{ route('dwhResources.destroy', $data->id)}}" method="post" style="display: inline-block">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger btn-sm"" type="submit">Delete</button>
+                                  </form>
                             </td>
                         </tr>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                Microsoft Surface Pro
-                            </th>
-                            <td class="px-6 py-4">
-                                White
-                            </td>
-                            <td class="px-6 py-4">
-                                Laptop PC
-                            </td>
-                            <td class="px-6 py-4">
-                                $1999
-                            </td>
-                            <td class="px-6 py-4 text-right">
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                            </td>
-                        </tr>
-                        <tr class="bg-white dark:bg-gray-800">
-                            <th scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                Magic Mouse 2
-                            </th>
-                            <td class="px-6 py-4">
-                                Black
-                            </td>
-                            <td class="px-6 py-4">
-                                Accessories
-                            </td>
-                            <td class="px-6 py-4">
-                                $99
-                            </td>
-                            <td class="px-6 py-4 text-right">
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
                 @auth
-                <button
-                class="px-3 py-2 text-sm font-medium text-center float-right text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                type="button" data-modal-toggle="authentication-modal">
-                Add more
-            </button>
+                <a href="{{ route ('dwhResources.create') }}">
+                    <button
+                    class="px-3 py-2 text-sm font-medium text-center float-right text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    type="button">
+                    Add more
+                </button>
 
                 @endauth
             </div>
@@ -224,11 +197,12 @@
                     </tbody>
                 </table>
                 @auth
-                <button
-                class="px-3 py-2 text-sm font-medium text-center float-right text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                type="button" data-modal-toggle="authentication-modal">
-                Add more
-            </button>
+                <a href="{{ route ('dwhResources.create') }}">
+                    <button
+                    class="px-3 py-2 text-sm font-medium text-center float-right text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    type="button">
+                    Add more
+                </button>
                 @endauth
             </div>
 
@@ -322,11 +296,13 @@
                     </tbody>
                 </table>
               @auth
+        <a href="{{ route ('dwhResources.create') }}">
               <button
               class="px-3 py-2 text-sm font-medium text-center float-right text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              type="button" data-modal-toggle="authentication-modal">
+              type="button">
               Add more
           </button>
+        </a>
               @endauth
             </div>
 
@@ -350,7 +326,7 @@
                 {{-- {{$json}} --}}
                 <tbody>
 
-                    @foreach ($data as $server)
+                    {{-- @foreach ($data as $server)
                     <tr
                         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <td class="px-6 py-4">{{ $server->id }}</td>
@@ -362,7 +338,7 @@
                         <td class="px-6 py-4">{{ $server->status }}</td>
                     </tr>
 
-                    @endforeach
+                    @endforeach --}}
                 </tbody>
             </table>
             {{-- <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
