@@ -3,7 +3,7 @@
       {{ session()->get('success') }}  
     </div><br />
   @endif
-<div class="my-6 mb-6 shadow-sm">
+<div class="my-6 mb-6 shadow-sm font-medium">
     <h2 class="my-6 dark:text-gray-300 font-extrabold text-2xl underline-offset-4 text-center ">These are the technical
         training materials as per the latest HIS products</h2>
     <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
@@ -43,13 +43,13 @@
     </div>
 
 
-    <div id="myTabContent my-4 mb-8">
+    <div id="myTabContent my-4 mb-8 uppercase font-medium">
         
         <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="profile" role="tabpanel"
             aria-labelledby="PRE-RELEASE TESTING SERVERS & DWH RESOURCES">
            
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <table class="w-full text-sm text-left text-gray-700 dark:text-gray-300">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                            
@@ -62,34 +62,48 @@
                             <th scope="col" class="px-6 py-3">
                                 URL
                             </th>
+                            @auth
                             <th scope="col" class="px-6 py-3">
                                 Other Options
                             </th>
+                            @endauth
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @foreach($dwhData as $data)
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        @foreach($dwhData as $dwh)
+                        <tr class="bg-white border-b uppercase dark:bg-gray-800 dark:border-gray-700">
                             
                 
                             <td class="px-6 py-4">
-                                {{$data->Title}}
+                                {{$dwh->Title}}
                             </td>
                             <td class="px-6 py-4">
-                                {{$data->Description}}
+                                {{$dwh->Description}}
                             </td>
-                            <td class="px-6 py-4 text-right">
-                                <a href="{{ route('dwhResources.edit', $data->id)}}"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <td class="px-6 py-4">
+                                <a href={{$dwh->url}} target="_blank">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                        Visit here
+                                        <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                    </button>
+                                </a>
+                                
+                            </td>
+                            @auth
+                                
+                              <td class="px-6 py-4 justify-center ">
+                                <a href="{{ route('dwhResources.edit', $dwh->id)}}"
+                                    ><button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Edit</button></a>
                                    
-                                <form action="{{ route('dwhResources.destroy', $data->id)}}" method="post" style="display: inline-block">
+                                <form action="{{ route('dwhResources.destroy', $dwh->id)}}" method="post" style="display: inline-block">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger btn-sm"" type="submit">Delete</button>
+                                    <button type="submit" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
                                   </form>
                             </td>
+                            @endauth
                         </tr>
-                        @endforeach --}}
+                        @endforeach
                     </tbody>
                 </table>
                 @auth
@@ -103,16 +117,13 @@
                 @endauth
             </div>
 
-            {{-- <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
-                    class="font-medium text-gray-800 dark:text-white">Profile tab's associated content</strong>.
-                Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps
-                classes to control the content visibility and styling.</p> --}}
+            
         </div>
         <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="dashboard" role="tabpanel"
             aria-labelledby="dashboard-tab">
 
-            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg font-medium">
+                <table class="w-full text-sm text-left text-gray-700 dark:text-gray-300">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             
@@ -125,35 +136,51 @@
                             <th scope="col" class="px-6 py-3">
                                 Video
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                               Other options
-                            </th>
+                           @auth
+                           <th scope="col" class="px-6 py-3">
+                            Other options
+                         </th>
+                           @endauth
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($totData as $data)
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        @foreach($totData as $technical)
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 uppercase">
                             
                 
                             <td class="px-6 py-4">
-                                {{$data->HISProductVersion}}
+                                {{$technical->HISProductVersion}}
                             </td>
                             <td class="px-6 py-4">
-                                {{$data->JobAid}}
+                                <a href= {{$technical->JobAid}} target="_blank">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                        Visit here
+                                        <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                    </button>
+                                </a>
+                               
                             </td>
                             <td class="px-6 py-4">
-                                {{$data->Video}}
+                                
+                                <a href= {{$technical->Video}} target="_blank">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                        Visit here
+                                        <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                    </button>
+                                </a>
                             </td>
-                            <td class="px-6 py-4 text-right">
-                                <a href="{{ route('tot.edit', $data->id)}}"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            @auth
+                            <td class="px-6 py-4 justify-center">
+                                <a href="{{ route('tot.edit', $technical->id)}}"
+                                    ><button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Edit</button></a>
                                    
-                                <form action="{{ route('tot.destroy', $data->id)}}" method="post" style="display: inline-block">
+                                <form action="{{ route('tot.destroy', $technical->id)}}" method="post" style="display: inline-block">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                    <button type="submit" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
                                   </form>
                             </td>
+                            @endauth
                         </tr>
                         @endforeach
                     </tbody>
@@ -168,97 +195,81 @@
                 @endauth
             </div>
 
-            {{-- <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
-                    class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>.
-                Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps
-                classes to control the content visibility and styling.</p> --}}
         </div>
-        <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="settings" role="tabpanel"
+        <div class="hidden p-4 uppercase bg-gray-50 rounded-lg dark:bg-gray-800" id="settings"  role="tabpanel"
             aria-labelledby="settings-tab">
 
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <table class="w-full text-sm text-left text-gray-700 dark:text-gray-300 font-medium">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
+                            
                             <th scope="col" class="px-6 py-3">
-                                Product name
+                                HIS Product & Version
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Color
+                                Job Aid 
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Category
+                                Video
                             </th>
+                            @auth
+                                
+                        
                             <th scope="col" class="px-6 py-3">
-                                Price
+                               Other options
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                <span class="sr-only">Edit</span>
-                            </th>
+                            @endauth
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($endUserData as $enduser)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                Apple MacBook Pro 17"
-                            </th>
+                            
+                
                             <td class="px-6 py-4">
-                                Sliver
+                                {{$enduser->HISProductVersion}}
                             </td>
                             <td class="px-6 py-4">
-                                Laptop
+                                                                
+                                <a href=  {{$enduser->JobAid}} target="_blank">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                        Visit here
+                                        <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                    </button>
+                                </a>
                             </td>
                             <td class="px-6 py-4">
-                                $2999
+                                
+                                <a href= {{$enduser->Video}} target="_blank">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                        Visit here
+                                        <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                    </button>
+                                </a>
                             </td>
-                            <td class="px-6 py-4 text-right">
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            @auth                        
+                            <td class="px-6 py-4 justify-center">
+
+                                <a href="{{ route('endusercontent.edit', $enduser->id)}}"
+                                    ><button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Edit</button></a>
+                                   
+                                <form action="{{ route('endusercontent.destroy', $enduser->id)}}" method="post" style="display: inline-block">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
+                                  </form>
+
+
+                               
                             </td>
+                            @endauth
                         </tr>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                Microsoft Surface Pro
-                            </th>
-                            <td class="px-6 py-4">
-                                White
-                            </td>
-                            <td class="px-6 py-4">
-                                Laptop PC
-                            </td>
-                            <td class="px-6 py-4">
-                                $1999
-                            </td>
-                            <td class="px-6 py-4 text-right">
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                            </td>
-                        </tr>
-                        <tr class="bg-white dark:bg-gray-800">
-                            <th scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                Magic Mouse 2
-                            </th>
-                            <td class="px-6 py-4">
-                                Black
-                            </td>
-                            <td class="px-6 py-4">
-                                Accessories
-                            </td>
-                            <td class="px-6 py-4">
-                                $99
-                            </td>
-                            <td class="px-6 py-4 text-right">
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
               @auth
-        <a href="{{ route ('dwhResources.create') }}">
+        <a href="{{ route ('endusercontent.create') }}">
               <button
               class="px-3 py-2 text-sm font-medium text-center float-right text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               type="button">
@@ -269,15 +280,12 @@
             </div>
 
 
-            {{-- <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
-                    class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>.
-                Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps
-                classes to control the content visibility and styling.</p> --}}
+           
         </div>
         {{-- all servers tab --}}
         <div class=" relative overflow-x-auto shadow-md sm:rounded-lg hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800"
             id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <table class="w-full text-sm text-left text-gray-700 dark:text-gray-300 font-medium" >
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <th scope="col" class="px-6 py-3">Id</th>
                     <th scope="col" class="px-6 py-3">Server Name</th>
@@ -287,26 +295,36 @@
                 </thead>
                 {{-- {{$json}} --}}
                 <tbody>
-
-                    {{-- @foreach ($data as $server)
+                    
+                     @foreach ($data as $server)
+                
                     <tr
-                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 uppercase">
                         <td class="px-6 py-4">{{ $server->id }}</td>
                         <td class="px-6 py-4">{{ $server->friendly_name }}</td>
-                        <td><button type="button"
-                                class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><a
-                                    href="{{ $server->url }}" target="_blank"
-                                    rel="noopener noreferrer">Visit</a></button></td>
-                        <td class="px-6 py-4">{{ $server->status }}</td>
+                        <td> <a href= {{$server->url}} target="_blank">
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Visit here
+                                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </a>
+                        <td class="px-6 py-4" id="color">
+                            <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Up</button>
+                        </td>
+                        {{-- <script>
+                            if ({{ $server->status }}===2) {
+                                document.getElementById("color").insertAdjacentHTML("afterend",'<button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Up</button>');
+                            } else {
+                                document.getElementById("color").insertAdjacentHTML("afterend",'<button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Up</button>');
+                            }
+
+
+                        </script> --}}
                     </tr>
 
-                    @endforeach --}}
+                    @endforeach
                 </tbody>
             </table>
-            {{-- <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong
-                    class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>.
-                Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps
-                classes to control the content visibility and styling.</p> --}}
         </div>
     </div>
 
@@ -315,63 +333,3 @@
 
 
 <!-- modals -->
-
-
-
-
-<div id="authentication-modal" tabindex="-1" aria-hidden="true"
-    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center">
-    <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-
-        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-            <button type="button"
-                class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
-                data-modal-toggle="authentication-modal">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                        clip-rule="evenodd"></path>
-                </svg>
-            </button>
-            <div class="py-6 px-6 lg:px-8">
-                <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
-                <form class="space-y-6" action="#">
-                    <div>
-                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your
-                            email</label>
-                        <input type="email" name="email" id="email"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                            placeholder="name@company.com" required="">
-                    </div>
-                    <div>
-                        <label for="password"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your
-                            password</label>
-                        <input type="password" name="password" id="password" placeholder="••••••••"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                            required="">
-                    </div>
-                    <div class="flex justify-between">
-                        <div class="flex items-start">
-                            <div class="flex items-center h-5">
-                                <input id="remember" type="checkbox" value=""
-                                    class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-                                    required="">
-                            </div>
-                            <label for="remember"
-                                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
-                        </div>
-                        <a href="#" class="text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
-                    </div>
-                    <button type="submit"
-                        class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login
-                        to your account</button>
-                    <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                        Not registered? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Create
-                            account</a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>

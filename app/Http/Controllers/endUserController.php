@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\DwhResources;
-
-class DwhResourcesController extends Controller
+use App\endUser;
+class endUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,9 @@ class DwhResourcesController extends Controller
      */
     public function index()
     {
-        //
-        // $dwhData = DwhResources::all();
-        // return view('index', compact('dwhData'));
+        // //
+        // $endUserData = endUser::all();
+        // return view('index', compact('endUserData'));
     }
 
     /**
@@ -27,7 +26,7 @@ class DwhResourcesController extends Controller
     public function create()
     {
         //
-        return view('resources.Dwh.create');
+        return view('resources.endUser.create');
     }
 
     /**
@@ -40,14 +39,13 @@ class DwhResourcesController extends Controller
     {
         //
         $storeData = $request->validate([
-            'Title' => 'required|max:255',
-            'Description' => 'required|max:255',
-            'url' => 'required|max:255',
+            'HISProductVersion' => 'required|max:255',
+            'JobAid' => 'required|max:255',
+            'Video' => 'required|max:255',
         ]);
-        $dwhData = DwhResources::create($storeData);
+        $totData = endUser::create($storeData);
         return redirect('/')->with('completed', 'Entry has been saved!');
    
-
     }
 
     /**
@@ -70,8 +68,9 @@ class DwhResourcesController extends Controller
     public function edit($id)
     {
         //
-        $data = DwhResources::findOrFail($id);
-        return view('resources.Dwh.edit', compact('data'));
+        $data = endUser::findOrFail($id);
+        return view('resources.endUser.edit', compact('data'));
+    
     }
 
     /**
@@ -85,11 +84,11 @@ class DwhResourcesController extends Controller
     {
         //
         $updateData = $request->validate([
-            'Title' => 'required|max:255',
-            'Description' => 'required|max:255',
-            'url' => 'required|max:255',
+            'HISProductVersion' => 'required|max:255',
+            'JobAid' => 'required|max:255',
+            'Video' => 'required|max:255',
         ]);
-        DwhResources::whereId($id)->update($updateData);
+        endUser::whereId($id)->update($updateData);
         return redirect('/')->with('completed', 'Entry has  has been updated');
   
     }
@@ -103,8 +102,8 @@ class DwhResourcesController extends Controller
     public function destroy($id)
     {
         //
-        $dwhdata = DwhResources::findOrFail($id);
-        $dwhdata->delete();
+        $endUserData = endUser::findOrFail($id);
+        $endUserData->delete();
         return redirect('/')->with('completed', 'Entry has been deleted');
   
     }

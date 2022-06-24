@@ -1,5 +1,5 @@
            {{-- <img class="card-img-top h-25 w-100 align-items-center" src="" alt="KeHMIS"  > --}}
-<div class="w-full shadow-md bg-cover rounded-sm bg-gray-50 dark:bg-transparent bg-center rounded-md" style="height:32rem;">
+<div class="w-full shadow-md bg-cover rounded-sm bg-gray-100 dark:bg-transparent bg-center rounded-md" style="height:32rem;">
     <div class="flex items-center justify-center h-full w-full bg-gray-10 bg-opacity-0 dark:bg-transparent">
         <div class="text-center">
             <h1 class="text-gray-900 text-2xl font-extrabold uppercase md:text-3xl dark:text-white">KeHMIS HIS Products Demo, Training and Testing

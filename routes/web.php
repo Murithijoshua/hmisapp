@@ -20,5 +20,6 @@ Route::get('/', [ApiConsummer::class, 'apiWithKey'])->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('dwhResources', DwhResourcesController::class);
-Route::resource('tot', totTechnicalsController::class);
+Route::resource('dwhResources', DwhResourcesController::class)->middleware('auth');
+Route::resource('tot', totTechnicalsController::class)->middleware('auth');
+Route::resource('endusercontent', endUserController::class)->middleware('auth');

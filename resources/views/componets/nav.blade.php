@@ -1,5 +1,5 @@
 <nav
-  class="bg-white bordershadow-2xl -green-200 px-2 sm:px-4 py-2.5 rounded-md dark:bg-gray-700 mb-2 font-black drop-shadow-xl dark:text-white ">
+  class="bg-teal-50 bordershadow-2xl -green-200 px-2 sm:px-4 py-2.5 rounded-md dark:bg-gray-700 mb-2 font-black drop-shadow-xl dark:text-white ">
   <div class="container flex flex-wrap justify-between items-center mx-auto">
     <a href="https:prod.kenyahmis.org:81818" class="flex items-center">
       {{-- <img class="card-img-top h-25 w-100 align-items-center" src="" alt="KeHMIS"> --}}

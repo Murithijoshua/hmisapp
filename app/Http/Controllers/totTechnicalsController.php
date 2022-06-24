@@ -13,9 +13,9 @@ class totTechnicalsController extends Controller
      */
     public function index()
     {
-        //
-        $totData = totTechnical::all();
-        return view('index', compact('totData'));
+        // //
+        // $totData = totTechnical::all();
+        // return view('index', compact('totData'));
     }
 
     /**
