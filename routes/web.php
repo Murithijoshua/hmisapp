@@ -1,5 +1,7 @@
-<?php
 
+<?php
+// use App\Http\Controllers\DwhResourcesController;
+use App\Http\Controllers\ApiConsummer;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +13,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [ApiConsummer::class, 'apiWithKey'])->name('home');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('dwhResources', DwhResourcesController::class)->middleware('auth');
+Route::resource('tot', totTechnicalsController::class)->middleware('auth');
+Route::resource('endusercontent', endUserController::class)->middleware('auth');
