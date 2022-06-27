@@ -13,9 +13,7 @@ use App\Http\Controllers\ApiConsummer;
 |
 */
 
-// Route::get('/', function () {
-//     return view('index');
-// });
+
 Route::get('/', [ApiConsummer::class, 'apiWithKey'])->name('home');
 Auth::routes();
 
