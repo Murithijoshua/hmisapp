@@ -4,6 +4,23 @@ networks:
   hmisapp:
    driver: bridge
 services:
+  site:
+    build:
+      context: .
+      dockerfile: nginx.dockerfile
+    container_name: hmisapp-nginx
+    restart: unless-stopped
+    ports:
+      - 8181:443
+    volumes:
+      - ./:/var/www/html:delegated
+
+    depends_on:
+      - database
+      - php
+    networks:
+      - hmisapp
+
   database:
     image: "mysql:5.7.28"
     container_name: hmisdb
@@ -16,13 +33,19 @@ services:
       - MYSQL_PASSWORD=test
     networks:
       - hmisapp
-  app:
-    build: .
-    container_name: hmis_php
-    restart: unless-stopped
+
+
+  php:
+    build:
+      context: .
+      dockerfile: php.dockerfile
+    container_name: hmisapp-php
+    restart: unless-stopped 
     depends_on:
       - database
-    ports:
-      - 8181:8181
+    volumes:
+         - ./:/var/www/html:delegated
     networks:
       - hmisapp
+
+
