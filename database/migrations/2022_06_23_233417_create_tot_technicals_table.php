@@ -19,6 +19,7 @@ class CreateTotTechnicalsTable extends Migration
             $table->string("HISProductVersion");
             $table->string("Video");
             $table->string("JobAid");
+            $table->string("Description");
         });
     }
 

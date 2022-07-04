@@ -40,6 +40,7 @@ class endUserController extends Controller
         //
         $storeData = $request->validate([
             'HISProductVersion' => 'required|max:255',
+            'Description'=>'required|max:255',
             'JobAid' => 'required|max:255',
             'Video' => 'required|max:255',
         ]);
@@ -85,6 +86,7 @@ class endUserController extends Controller
         //
         $updateData = $request->validate([
             'HISProductVersion' => 'required|max:255',
+            'Description'=>'required|max:255',
             'JobAid' => 'required|max:255',
             'Video' => 'required|max:255',
         ]);

@@ -131,6 +131,9 @@
                                 HIS Product & Version
                             </th>
                             <th scope="col" class="px-6 py-3">
+                                Description
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 Job Aid 
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -150,6 +153,9 @@
                 
                             <td class="px-6 py-4">
                                 {{$technical->HISProductVersion}}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{$technical->Description}}
                             </td>
                             <td class="px-6 py-4">
                                 <a href= {{$technical->JobAid}} target="_blank">
@@ -208,6 +214,9 @@
                                 HIS Product & Version
                             </th>
                             <th scope="col" class="px-6 py-3">
+                                Job Aid Description
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 Job Aid 
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -229,6 +238,9 @@
                 
                             <td class="px-6 py-4">
                                 {{$enduser->HISProductVersion}}
+                            </td>
+                            <td class="px-6 py-4">
+                                {{$enduser->Description}}
                             </td>
                             <td class="px-6 py-4">
                                                                 

@@ -17,6 +17,7 @@ class CreateEndUsersTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string("HISProductVersion");
+            $table->string("Description");
             $table->string("Video");
             $table->string("JobAid");
         });

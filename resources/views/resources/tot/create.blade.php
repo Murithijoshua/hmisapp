@@ -29,12 +29,16 @@
               <input type="text" class="form-control" name="HISProductVersion" value="{{ old('HISProductVersion') }}" />
           </div>
           <div class="form-group">
+            <label for="Description">Description</label>
+            <input type="text" class="form-control" name="Description" value="{{ old('Description') }}" placeholder="type of aid(i.e installation manual, configuration manual"/>
+        </div>
+          <div class="form-group">
               <label for="JobAid">Job_Aid</label>
               <input type="text" class="form-control" name="JobAid" value="{{ old('JobAid') }}"/>
           </div>
           <div class="form-group">
               <label for="Video">Video Url</label>
-              <input type="url" class="form-control" name="Video" value="{{ old('Video') }}"/>
+              <input type="url" class="form-control" name="Video" value="{{ old('Video') }}" placeholder="This Field is required by default🔐 use job aid url in case no video provided"/>
           </div>
           
           <button type="submit" class="btn btn-block btn-success">Create</button>
