@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('dwhResources', DwhResourcesController::class)->middleware('auth');
 Route::resource('tot', totTechnicalsController::class)->middleware('auth');
 Route::resource('endusercontent', endUserController::class)->middleware('auth');
+Route::resource('prod', ProdServersController::class);

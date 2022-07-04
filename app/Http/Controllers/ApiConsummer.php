@@ -7,6 +7,7 @@ use GuzzleHttp\Client;
 use App\totTechnical;
 use App\endUser;
 use App\DwhResources;
+use App\prodServers;
 
 class ApiConsummer extends Controller
 {
@@ -28,11 +29,12 @@ class ApiConsummer extends Controller
         $totData = totTechnical::all();
         $dwhData = DwhResources::all();
         $endUserData = endUser::all();
+        $prodData = prodServers::all();
         // dd($totData,$dwhData,$endUserData);
         
 
 
-        return view('index', compact('data','totData','dwhData','endUserData'));
+        return view('index', compact('data','totData','dwhData','endUserData','prodData'));
 
     }
 
