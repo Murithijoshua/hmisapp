@@ -8,6 +8,7 @@ use App\totTechnical;
 use App\endUser;
 use App\DwhResources;
 use App\prodServers;
+use App\trainingservers;
 
 class ApiConsummer extends Controller
 {
@@ -30,11 +31,12 @@ class ApiConsummer extends Controller
         $dwhData = DwhResources::all();
         $endUserData = endUser::all();
         $prodData = prodServers::all();
+        $trainingData=trainingservers::all();
         // dd($totData,$dwhData,$endUserData);
         
 
 
-        return view('index', compact('data','totData','dwhData','endUserData','prodData'));
+        return view('index', compact('data','totData','dwhData','endUserData','prodData','trainingData'));
 
     }
 

@@ -22,3 +22,4 @@ Route::resource('dwhResources', DwhResourcesController::class)->middleware('auth
 Route::resource('tot', totTechnicalsController::class)->middleware('auth');
 Route::resource('endusercontent', endUserController::class)->middleware('auth');
 Route::resource('prod', ProdServersController::class);
+Route::resource('training', traingServerController::class);

@@ -1,8 +1,23 @@
 <div>
-    <h2 class="my-6 dark:text-gray-300 font-extrabold text-2xl underline-offset-4 text-center " id="training-servers">Training Servers</h2>
+    <h2 class="my-6 underline dark:text-gray-300 font-extrabold text-2xl underline-offset-4 text-center "
+        id="training-servers">Training Servers
+        <span>
+            @auth
+            <a href="{{ route ('training.create') }}">
+                <button
+                    class="px-3 py-2  text-sm font-medium text-center float-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                    type="button">
+                    Add more
+                </button>
+            </a>
+            @endauth
+        </span>
+
+    </h2>
     <div class="w-11/12 flex flex-wrap my-4 space-y-4 md:space-x-4  justify-center ">
         <div></div>
         <!-- kenyaemr 18.x-->
+
         <div
             class="p-6 max-w-sm bg-white  rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
@@ -146,24 +161,24 @@
                 </svg>
             </a>
         </div>
-        <!-- mlab -->
+        <!-- Getting from database -->
+        @foreach ($trainingData as $training)
         <div
             class="p-6 max-w-sm bg-white  rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">MLAB</h5>
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    {{$training->ServerName}}</h5>
             </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Use this for MLAB training and demo. To
-                install,
-                get latest.</p>
-            <ul class="list-inside p-2 hover:text-slate-700 dark:text-slate-300 dark:shadow-none dark:ring-0">
-                <li>Login Username: <span class="select-all">palladium@kenya</span> </li>
-                <li>Password: <span class="select-all">Admin123</span></li>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{$training->Description}}</p>
+            <ul class="list-inside font-sm p-2 hover:text-slate-700 dark:text-slate-300 dark:shadow-none dark:ring-0">
+                <li>Login Username: <span class="select-all italic">{{$training->LoginUsername}}</span> </li>
+                <li>Password: <span class="select-all">{{$training->LoginPass}}</span></li>
                 <!-- ... -->
             </ul>
 
-            <a href="http://176.58.109.44:5010/" target="_blank"
+            <a href="{{$training->link}}" target="_blank"
                 class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                MLAB
+                {{$training->ServerName}}
                 <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 30 30"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -172,7 +187,7 @@
                 </svg>
 
             </a>
-            <a href="https://github.com/palladiumkenya/mLab" target="_blank"
+            <a href="{{$training->github}}" target="_blank"
                 class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 Github
                 <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 30 30"
@@ -182,7 +197,29 @@
                         clip-rule="evenodd"></path>
                 </svg>
             </a>
+            @auth
+
+
+            <ul class="inline-flex p-2  hover:text-slate-700 dark:text-slate-300 dark:shadow-none dark:ring-0">
+                <li class="float-left"><a href="{{ route('training.edit', $training->id)}}"><button type="button"
+                            class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Edit</button></a>
+                </li>
+                <li>
+                    <form action="{{ route('training.destroy', $training->id)}}" method="post"
+                        style="display: inline-block">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit"
+                            class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
+                    </form>
+                </li>
+                <!-- ... -->
+            </ul>
+            @endauth
         </div>
+
+        @endforeach
+
         <!-- IL -->
         <div
             class="p-6 max-w-sm bg-white  rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
@@ -229,15 +266,19 @@
 
 {{-- prod servers --}}
 <div>
-    <h2 class="my-6 dark:text-gray-300 underline font-extrabold text-2xl underline-offset-4 text-center " id="prod-servers">Prod-Servers <span>
-        <a href="{{ route ('prod.create') }}">
-              <button
-              class="px-3 py-2  text-sm font-medium text-center float-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-              type="button">
-              Add more
-          </button>
-        </a></span> </h2>
-   
+    <h2 class="my-6 dark:text-gray-300 underline font-extrabold text-2xl underline-offset-4 text-center "
+        id="prod-servers">Prod-Servers <span>
+            @auth
+            <a href="{{ route ('prod.create') }}">
+                <button
+                    class="px-3 py-2  text-sm font-medium text-center float-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                    type="button">
+                    Add more
+                </button>
+            </a>
+            @endauth
+        </span> </h2>
+
     <div class="w-11/12 flex flex-wrap my-4 space-y-4 md:space-x-4  justify-center ">
         <div></div>
         @foreach ($prodData as $item)
@@ -245,29 +286,12 @@
         <div
             class="p-6 max-w-sm bg-white  rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $item->ServerName }}</h5>
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $item->ServerName }}
+                </h5>
             </a>
-            @auth
-            
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">For QA only.</p>
-            <ul class="inline-flex p-2  hover:text-slate-700 dark:text-slate-300 dark:shadow-none dark:ring-0">
-                <li><a href="{{ route('prod.edit', $item->id)}}"
-                    ><button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Edit</button></a>
-                   </li>
-                <li>
-                    <form action="{{ route('prod.destroy', $item->id)}}" method="post" style="display: inline-block">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
-                      </form>
-                </li>
-                <!-- ... -->
-            </ul>
-            @endauth
-            <div>
             <a href="{{$item->url}}" target="_blank"
                 class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Visit 
+                Visit
                 <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 30 30"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -286,16 +310,28 @@
                         clip-rule="evenodd"></path>
                 </svg>
             </a>
-            </div>
+            @auth
+            <ul class="flex p-2  hover:text-slate-700 dark:text-slate-300 dark:shadow-none dark:ring-0">
+                <li class="float-left"><a href="{{ route('training.edit', $training->id)}}"><button type="button"
+                            class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Edit</button></a>
+                </li>
+                <li>
+                    <form action="{{ route('training.destroy', $training->id)}}" method="post"
+                        style="display: inline-block">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit"
+                            class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
+                    </form>
+                </li>
+                <!-- ... -->
+            </ul>
+            @endauth
         </div>
-        <!-- kenyaemr 17.x -->
-       
-        
-   
         @endforeach
-        
 
-    </div>        
-    
-    
+
+    </div>
+
+
 </div>
