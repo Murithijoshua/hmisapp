@@ -42,6 +42,7 @@ class totTechnicalsController extends Controller
             'HISProductVersion' => 'required|max:255',
             'JobAid' => 'required|max:255',
             'Video' => 'required|max:255',
+            'Description'=>'required|max:255'
         ]);
         $totData = totTechnical::create($storeData);
         return redirect('/')->with('completed', 'Entry has been saved!');
@@ -85,6 +86,7 @@ class totTechnicalsController extends Controller
         $updateData = $request->validate([
             'HISProductVersion' => 'required|max:255',
             'JobAid' => 'required|max:255',
+            'Description'=>'required|max:255',
             'Video' => 'required|max:255',
         ]);
         totTechnical::whereId($id)->update($updateData);

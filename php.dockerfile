@@ -14,6 +14,7 @@ RUN mkdir -p /var/www/html
 RUN chown -R laravel:laravel /var/www/html
 WORKDIR /var/www/html
 COPY . /var/www/html
+# 👌 not needed 
 # RUN composer install --no-interaction --optimize-autoloader --no-dev
 # Optimizing Configuration loading
 # RUN php artisan config:cache

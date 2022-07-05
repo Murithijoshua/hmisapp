@@ -22,24 +22,32 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('tot.update', $data->id) }}">
+      <form method="post" action="{{ route('training.update', $data->id) }}">
           <div class="form-group">
               @csrf
               @method('PATCH')
-              <label for="HISProductVersion">HIS_Product_&_Version</label>
-              <input type="text" class="form-control" name="HISProductVersion" value="{{ $data->HISProductVersion }}"/>
+              <label for="ServerName">HIS_Product_&_Version</label>
+              <input type="text" class="form-control" name="ServerName" value="{{ $data->ServerName }}"/>
           </div>
           <div class="form-group">
             <label for="Description">Description for Job_Aid</label>
             <input type="text" class="form-control" name="Description" value="{{ $data->Description }}"/>
         </div>
           <div class="form-group">
-              <label for="JobAid">Job Aid</label>
-              <input type="text" class="form-control" name="JobAid" value="{{ $data->JobAid }}"/>
+              <label for="LoginUsername">Edit Access Username</label>
+              <input type="text" class="form-control" name="LoginUsername" value="{{ $data->LoginUsername }}"/>
           </div>
           <div class="form-group">
-              <label for="Video">Video url</label>
-              <input type="url" class="form-control" name="Video" value="{{ $data->Video }}"/>
+            <label for="LoginPass">Edit Access password</label>
+            <input type="text" class="form-control" name="LoginPass" value="{{ $data->LoginPass }}"/>
+        </div>
+        <div class="form-group">
+          <label for="link">Edit Access URL</label>
+          <input type="url" class="form-control" name="link" value="{{ $data->link }}"/>
+      </div>
+          <div class="form-group">
+              <label for="github">Github url</label>
+              <input type="url" class="form-control" name="github" value="{{ $data->github }}"/>
           </div>
           
           <button type="submit" class="btn btn-block btn-danger">Update </button>

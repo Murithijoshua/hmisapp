@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\endUser;
-class endUserController extends Controller
+use App\prodServers;
+
+class ProdServersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +14,7 @@ class endUserController extends Controller
      */
     public function index()
     {
-        // //
-        // $endUserData = endUser::all();
-        // return view('index', compact('endUserData'));
+        //
     }
 
     /**
@@ -26,7 +25,7 @@ class endUserController extends Controller
     public function create()
     {
         //
-        return view('resources.endUser.create');
+        return view('resources.prod.create');
     }
 
     /**
@@ -38,15 +37,14 @@ class endUserController extends Controller
     public function store(Request $request)
     {
         //
+        //
         $storeData = $request->validate([
-            'HISProductVersion' => 'required|max:255',
-            'Description'=>'required|max:255',
-            'JobAid' => 'required|max:255',
-            'Video' => 'required|max:255',
+            'ServerName' => 'required|max:255',
+            'url'=>'required|max:255',
+            'githubLinks' => 'required|max:255'
         ]);
-        $totData = endUser::create($storeData);
+        $prodData = prodServers::create($storeData);
         return redirect('/')->with('completed', 'Entry has been saved!');
-   
     }
 
     /**
@@ -69,9 +67,8 @@ class endUserController extends Controller
     public function edit($id)
     {
         //
-        $data = endUser::findOrFail($id);
-        return view('resources.endUser.edit', compact('data'));
-    
+        $data = prodServers::findOrFail($id);
+        return view('resources.prod.edit', compact('data'));
     }
 
     /**
@@ -85,14 +82,12 @@ class endUserController extends Controller
     {
         //
         $updateData = $request->validate([
-            'HISProductVersion' => 'required|max:255',
-            'Description'=>'required|max:255',
-            'JobAid' => 'required|max:255',
-            'Video' => 'required|max:255',
+            'ServerName' => 'required|max:255',
+            'url'=>'required|max:255',
+            'githubLinks' => 'required|max:255'
         ]);
-        endUser::whereId($id)->update($updateData);
+        prodServers::whereId($id)->update($updateData);
         return redirect('/')->with('completed', 'Entry has  has been updated');
-  
     }
 
     /**
@@ -104,9 +99,8 @@ class endUserController extends Controller
     public function destroy($id)
     {
         //
-        $endUserData = endUser::findOrFail($id);
-        $endUserData->delete();
+        $prodData = prodServers::findOrFail($id);
+        $prodData->delete();
         return redirect('/')->with('completed', 'Entry has been deleted');
-  
     }
 }

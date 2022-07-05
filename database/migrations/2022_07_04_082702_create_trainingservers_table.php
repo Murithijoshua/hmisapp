@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTotTechnicalsTable extends Migration
+class CreateTrainingserversTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class CreateTotTechnicalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tot_technicals', function (Blueprint $table) {
+        Schema::create('trainingservers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string("HISProductVersion");
-            $table->string("Video");
-            $table->string("JobAid");
+            $table->string("ServerName");
             $table->string("Description");
+            $table->string("LoginUsername")->nullable("Not required");
+            $table->string("LoginPass")->nullable("Not required");
+            $table->string("link");
+            $table->string("github");
         });
     }
 
@@ -30,6 +32,6 @@ class CreateTotTechnicalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tot_technicals');
+        Schema::dropIfExists('trainingservers');
     }
 }

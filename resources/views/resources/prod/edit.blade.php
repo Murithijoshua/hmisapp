@@ -22,24 +22,20 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('tot.update', $data->id) }}">
+      <form method="post" action="{{ route('prod.update', $data->id) }}">
           <div class="form-group">
               @csrf
               @method('PATCH')
-              <label for="HISProductVersion">HIS_Product_&_Version</label>
-              <input type="text" class="form-control" name="HISProductVersion" value="{{ $data->HISProductVersion }}"/>
+              <label for="ServerName">Product name</label>
+              <input type="text" class="form-control" name="ServerName" value="{{ $data->ServerName }}"/>
           </div>
           <div class="form-group">
-            <label for="Description">Description for Job_Aid</label>
-            <input type="text" class="form-control" name="Description" value="{{ $data->Description }}"/>
-        </div>
-          <div class="form-group">
-              <label for="JobAid">Job Aid</label>
-              <input type="text" class="form-control" name="JobAid" value="{{ $data->JobAid }}"/>
+              <label for="url">Service Link</label>
+              <input type="text" class="form-control" name="url" value="{{ $data->url }}"/>
           </div>
           <div class="form-group">
-              <label for="Video">Video url</label>
-              <input type="url" class="form-control" name="Video" value="{{ $data->Video }}"/>
+              <label for="githubLinks">Github url</label>
+              <input type="url" class="form-control" name="githubLinks" value="{{ $data->githubLinks }}"/>
           </div>
           
           <button type="submit" class="btn btn-block btn-danger">Update </button>

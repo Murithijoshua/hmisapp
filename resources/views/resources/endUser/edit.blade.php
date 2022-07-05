@@ -30,6 +30,10 @@
               <input type="text" class="form-control" name="HISProductVersion" value="{{ $data->HISProductVersion }}"/>
           </div>
           <div class="form-group">
+            <label for="Description">Job aid Description</label>
+            <input type="text" class="form-control" name="Description" value="{{ $data->Description }}" />
+        </div>
+          <div class="form-group">
               <label for="JobAid">Job Aid</label>
               <input type="text" class="form-control" name="JobAid" value="{{ $data->JobAid }}"/>
           </div>

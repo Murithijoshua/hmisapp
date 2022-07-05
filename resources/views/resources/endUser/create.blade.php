@@ -29,6 +29,10 @@
               <input type="text" class="form-control" name="HISProductVersion" value="{{ old('HISProductVersion') }}" />
           </div>
           <div class="form-group">
+            <label for="Description">Job_Aid Description</label>
+            <input type="text" class="form-control" name="Description" value="{{ old('Description') }}"  placeholder="jobaid Description"/>
+        </div>
+          <div class="form-group">
               <label for="JobAid">Job_Aid</label>
               <input type="text" class="form-control" name="JobAid" value="{{ old('JobAid') }}"/>
           </div>

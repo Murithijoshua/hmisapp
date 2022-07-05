@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\trainingservers;
 use Illuminate\Http\Request;
-use App\endUser;
-class endUserController extends Controller
+
+class traingServerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +13,7 @@ class endUserController extends Controller
      */
     public function index()
     {
-        // //
-        // $endUserData = endUser::all();
-        // return view('index', compact('endUserData'));
+        //
     }
 
     /**
@@ -26,7 +24,7 @@ class endUserController extends Controller
     public function create()
     {
         //
-        return view('resources.endUser.create');
+        return view('resources.training.create');
     }
 
     /**
@@ -39,12 +37,14 @@ class endUserController extends Controller
     {
         //
         $storeData = $request->validate([
-            'HISProductVersion' => 'required|max:255',
-            'Description'=>'required|max:255',
-            'JobAid' => 'required|max:255',
-            'Video' => 'required|max:255',
+            'ServerName' => 'required|max:255',
+            'Description' => 'required|max:255',
+            'LoginUsername' => 'nullable|string|max:255',
+            'LoginPass' => 'nullable|string|max:255',
+            'link'=>'required|max:255',
+            'github' => 'required|max:255'
         ]);
-        $totData = endUser::create($storeData);
+        $prodData = trainingservers::create($storeData);
         return redirect('/')->with('completed', 'Entry has been saved!');
    
     }
@@ -69,9 +69,8 @@ class endUserController extends Controller
     public function edit($id)
     {
         //
-        $data = endUser::findOrFail($id);
-        return view('resources.endUser.edit', compact('data'));
-    
+        $data = trainingservers::findOrFail($id);
+        return view('resources.training.edit', compact('data'));
     }
 
     /**
@@ -85,14 +84,15 @@ class endUserController extends Controller
     {
         //
         $updateData = $request->validate([
-            'HISProductVersion' => 'required|max:255',
-            'Description'=>'required|max:255',
-            'JobAid' => 'required|max:255',
-            'Video' => 'required|max:255',
+            'ServerName' => 'required|max:255',
+            'Description' => 'required|max:255',
+            'LoginUsername' => 'max:255',
+            'LoginPass' => 'max:255',
+            'link'=>'required|max:255',
+            'github' => 'required|max:255'
         ]);
-        endUser::whereId($id)->update($updateData);
+        trainingservers::whereId($id)->update($updateData);
         return redirect('/')->with('completed', 'Entry has  has been updated');
-  
     }
 
     /**
@@ -104,9 +104,8 @@ class endUserController extends Controller
     public function destroy($id)
     {
         //
-        $endUserData = endUser::findOrFail($id);
-        $endUserData->delete();
+        $trainingData = trainingservers::findOrFail($id);
+        $trainingData->delete();
         return redirect('/')->with('completed', 'Entry has been deleted');
-  
     }
 }
