@@ -1,6 +1,6 @@
 <div>
     <h2 class="my-6 underline dark:text-gray-300 font-extrabold text-2xl underline-offset-4 text-center "
-        id="training-servers">Training Servers
+        id="training-servers">Training instances
         <span>
             @auth
             <a href="{{ route ('training.create') }}">
