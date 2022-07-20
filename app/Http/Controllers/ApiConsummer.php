@@ -27,11 +27,11 @@ class ApiConsummer extends Controller
 
         $responseBody = json_decode($response->getBody());
         $data=$responseBody->monitors;
-        $totData = totTechnical::all();
-        $dwhData = DwhResources::all();
-        $endUserData = endUser::all();
-        $prodData = prodServers::all();
-        $trainingData=trainingservers::all();
+        $totData = totTechnical::orderBy('created_at', 'DESC')->get();
+        $dwhData = DwhResources::orderBy('created_at', 'DESC')->get();
+        $endUserData = endUser::orderBy('created_at', 'DESC')->get();
+        $prodData = prodServers::orderBy('created_at', 'DESC')->get();
+        $trainingData=trainingservers::orderBy('created_at', 'DESC')->get();
         // dd($totData,$dwhData,$endUserData);
         
 
