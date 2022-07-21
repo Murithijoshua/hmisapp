@@ -1,30 +1,30 @@
-name: Deployment To
+name: Deployment To CICD
 on:
   push: 
     branches:
       - master
- jobs:
+  jobs:
    build:
       name: Deploying to the server
       runs-on: ubuntu-latest
       steps:
-        -name: Creating a remote connection
+      -  name: Creating a remote connection
          uses: appleboy/ssh-action@master
          with: 
            host: ${{ secrets.HOST }}
            username: ${{ secrets.USERNAME }}
            key : ${{ secrets.CICD_SECRET }}
            port : ${{ secrets.PORT }}
-           command_timeout : 200m
-           cd /apps/dockerApps/hmisapp
-           sudo rm -rf hmisapp
-           sudo mkdir hmisapp
-           sudo mkdir -R cicd:cicd hmisapp
-           git config --global --add safe.directory /apps/dockerApps/hmisapp
-           git clone https://github.com/palladiumkenya/hmisapp.git hmisapp
-           cd hmisapp
-           git status
-           sudo cp /apps/dockerApps/hmis/nginx /apps/dockerApps/hmisapp
-           sudo cp  /apps/dockerApps/hmis/nginx.dockerfile /apps/dockerApps/hmisapp
-           docker compose-down 
-           docker compose-up -d
+           script: |
+            cd /apps/dockerApps/hmisapp
+            sudo rm -rf hmisapp
+            sudo mkdir hmisapp
+            sudo mkdir -R cicd:cicd hmisapp
+            git config --global --add safe.directory /apps/dockerApps/hmisapp
+            git clone https://github.com/palladiumkenya/hmisapp.git hmisapp
+            cd hmisapp
+            git status
+            sudo cp /apps/dockerApps/hmis/nginx /apps/dockerApps/hmisapp
+            sudo cp  /apps/dockerApps/hmis/nginx.dockerfile /apps/dockerApps/hmisapp
+            docker compose-down 
+            docker compose-up -d
