@@ -18,12 +18,12 @@ jobs:
            key : ${{ secrets.CICD_SECRET }}
            port : ${{ secrets.PORT }}
            script: |
-            cd /apps/dockerApps/hmisapp
+            cd /apps/dockerApps
             sudo rm -rf hmisapp
             sudo mkdir hmisapp
-            sudo mkdir -R cicd:cicd hmisapp
+            sudo chmod -R cicd:cicd hmisapp
             git config --global --add safe.directory /apps/dockerApps/hmisapp
-            git clone https://github.com/palladiumkenya/hmisapp.git hmisapp
+            git clone -b master https://github.com/palladiumkenya/hmisapp.git hmisapp
             cd hmisapp
             git status
             sudo cp /apps/dockerApps/hmis/nginx /apps/dockerApps/hmisapp
