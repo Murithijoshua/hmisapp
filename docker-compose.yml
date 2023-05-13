@@ -26,6 +26,8 @@ services:
     container_name: hmisdb
     restart: unless-stopped
     tty: true
+    ports:
+      - "3307:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=rooe
       - MYSQL_DATABASE=hmis
@@ -40,7 +42,7 @@ services:
       context: .
       dockerfile: php.dockerfile
     container_name: hmisapp-php
-    restart: unless-stopped 
+    restart: unless-stopped
     depends_on:
       - database
     volumes:

@@ -27,7 +27,7 @@
 
 </head>
 
-<body class="dark:bg-gray-800 bg-teal-100" >
+<body class="dark:bg-gray-900 bg-white" >
     <header>
     {{-- navigation --}}
     @include('componets.nav')

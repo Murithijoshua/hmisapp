@@ -27,12 +27,12 @@
 
 </head>
 
-<body class="dark:bg-gray-800">
+<body class="bg-white dark:bg-gray-900">
     <header>
     {{-- navigation --}}
     @include('componets.nav')
-   
- 
+    </header>
+
     <div class="container mx-auto justify-center">
         @yield('content')
 
@@ -89,7 +89,7 @@
 
     </script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-       
+
     <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
 </body>
 

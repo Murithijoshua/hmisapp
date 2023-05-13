@@ -5,8 +5,9 @@
 @include('componets.Demo')
 {{-- pre-release servers --}}
 @include('componets.tabs')
+
 {{-- {{$dwhData}} --}}
-{{-- 
+{{--
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8 ">
