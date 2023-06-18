@@ -19,6 +19,7 @@ class CreateProdServersTable extends Migration
             $table->string('ServerName');
             $table->string("url");
             $table->string('githubLinks');
+            $table->string('imageLink');
         });
     }
 
