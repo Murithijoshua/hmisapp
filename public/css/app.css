@@ -1073,6 +1073,9 @@ input:checked + .toggle-bg {
 .mt-8 {
   margin-top: 2rem;
 }
+.ml-7 {
+  margin-left: 1.75rem;
+}
 .block {
   display: block;
 }

@@ -47,7 +47,8 @@
 
     {{-- javascript --}}
     <script>
-        
+        var sites = {!! json_encode($trainingData->toArray()) !!};
+        console.log(sites)
         var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
